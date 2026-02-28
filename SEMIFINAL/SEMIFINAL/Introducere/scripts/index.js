@@ -1,5 +1,5 @@
-const API_BASE_URL = 'https://zebrahack.iqnox.tech/api';
-const API_KEY = 'Linux Warriors';
+const API_BASE_URL = 'nope';
+const API_KEY = 'nope';
 
 let map = null;
 let heatmapSource = null;
@@ -327,3 +327,4 @@ const initMap = () => {
 document.addEventListener('DOMContentLoaded', () => {
     initMap();
 });
+
