@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forest Heatmap - ZebraHack Proiect</title>
+    <link rel="stylesheet" href="styles/landing.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="index.html" class="logo-container">
+                    <img src="assets/logo2.png" alt="Forest Heatmap Logo" class="logo-img">
+                </a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                ☰
+            </button>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Acasă</a>
+                <a href="../Harta/map.html" class="nav-link">Hartă</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="hero-section">
+        <div class="background-overlay"></div>
+        <div class="hero-content">
+            <div class="title-section">
+                <h1 class="main-title">
+                    <span class="title-word">Forest Heatmap</span>
+                </h1>
+                <div class="catch-phrases">
+                    <span class="catch-phrase">Vizibilitate pentru păduri</span>
+                    <span class="catch-phrase">Date care arată adevărul</span>
+                    <span class="catch-phrase">Unde lemnul contează</span>
+                </div>
+            </div>
+
+            <div class="intro-section">
+                <div class="project-label">
+                    <p class="label-line-bold">Un Proiect Zebrahack3.0</p>
+                </div>
+                <div class="description-text">
+                    <p>
+                        Pentru a putea urmări exploatarea resursei forestiere și presiunea
+                        exercitată asupra pădurilor și a mediului, un factor important îl
+                        reprezintă analiza "hotspoturilor" de transport de lemn, acestea
+                        din urmă indicând zonele cu o activitate economică intensă, cerere
+                        mare de lemn și flux continuu.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-blocks">
+            <div class="info-block">
+                <h2 class="block-title">Importanță</h2>
+                <p class="block-text">
+                    Identificarea și analiza hotspoturilor de transport de lemn permite
+                    o înțelegere mai profundă a dinamicii exploatării forestiere,
+                    facilitând luarea unor decizii informate privind gestionarea
+                    durabilă a pădurilor și protecția mediului.
+                </p>
+            </div>
+            <div class="info-block">
+                <h2 class="block-title">Monitorizare</h2>
+                <p class="block-text">
+                    Sistemul de monitorizare în timp real oferă vizibilitate completă
+                    asupra activităților de transport, permițând detectarea rapidă a
+                    anomaliilor, optimizarea rutelor și asigurarea conformității cu
+                    reglementările în vigoare.
+                </p>
+            </div>
+            <div class="info-block">
+                <h2 class="block-title">Riscuri</h2>
+                <p class="block-text">
+                    Concentrarea excesivă a activităților de transport în anumite zone
+                    poate genera riscuri semnificative pentru ecosistem, inclusiv
+                    degradarea solului, perturbarea faunei și impact negativ asupra
+                    biodiversității locale.
+                </p>
+            </div>
+            <div class="info-block">
+                <h2 class="block-title">Impact</h2>
+                <p class="block-text">
+                    Prin analiza impactului activităților de transport, putem dezvolta
+                    strategii eficiente de mitigare, promovând practici durabile care
+                    echilibrează necesitățile economice cu protecția mediului natural.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Navbar scroll effect
+        const header = document.querySelector('.main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const nav = document.querySelector('.main-nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            menuToggle.textContent = nav.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                menuToggle.textContent = '☰';
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+                nav.classList.remove('active');
+                menuToggle.textContent = '☰';
+            }
+        });
+    </script>
+</body>
+</html>
